@@ -57,3 +57,31 @@ You can run the script using `python3 subdomain_cli.py` or `./subdomain_cli.py` 
 
 ```bash
 ./subdomain_cli.py -h
+
+Passive discovery only for example.com:
+./subdomain_cli.py -d example.com --passive-only
+.
+.
+.
+.
+Active brute-force discovery for example.com using wordlist.txt:
+./subdomain_cli.py -d example.com -w /path/to/your/wordlist.txt --active-only
+.
+.
+.
+.
+Combined passive and active discovery, saving results to found.txt:
+./subdomain_cli.py -d example.com -w /path/to/your/wordlist.txt -o found.txt
+(If --passive-only or --active-only are not specified, it will run passive discovery, and also active discovery if a wordlist is provided.)
+.
+.
+.
+.
+Combined discovery with 20 threads and verbose output:
+./subdomain_cli.py -d example.com -w /path/to/your/wordlist.txt -t 20 -v
+.
+.
+.
+.
+Passive discovery with verbose output and results saved:
+./subdomain_cli.py -d example.com --passive-only -v -o passive_results.txt
